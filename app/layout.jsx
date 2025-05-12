@@ -1,29 +1,32 @@
-import '../styles/globals.css';
-import { Footer } from '../components/footer';
-import { Header } from '../components/header';
+// app/layout.js
+import '@/styles/globals.css';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 export const metadata = {
-    title: {
-        template: '%s | Netlify',
-        default: 'Netlify Starter'
-    }
+  title: 'تأجير سيارات في دبي - احجز الآن واستمتع بالراحة والمرونة | Company',
+  description: 'استأجر سيارة في دبي من أفضل شركات التأجير واستمتع براحة ومرونة لا مثيل لها. اكتشف معالم دبي الشهيرة واستمتع بتجربة قيادة فاخرة وآمنة. احجز الآن واحصل على أفضل العروض!',
+  openGraph: {
+    title: 'تأجير سيارات في دبي - احجز الآن واستمتع بالراحة والمرونة | Company',
+    description: 'استأجر سيارة في دبي من أفضل شركات التأجير واستمتع براحة ومرونة لا مثيل لها.',
+    url: 'https://yourdomain.com',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'تأجير سيارات في دبي - احجز الآن واستمتع بالراحة والمرونة | Company',
+    description: 'استأجر سيارة في دبي من أفضل شركات التأجير واستمتع براحة ومرونة لا مثيل لها.',
+  },
 };
 
 export default function RootLayout({ children }) {
-    return (
-        <html lang="en">
-            <head>
-                <link rel="icon" href="/favicon.svg" sizes="any" />
-            </head>
-            <body className="antialiased text-white bg-blue-900">
-                <div className="flex flex-col min-h-screen px-6 bg-noise sm:px-12">
-                    <div className="flex flex-col w-full max-w-5xl mx-auto grow">
-                        <Header />
-                        <main className="grow">{children}</main>
-                        <Footer />
-                    </div>
-                </div>
-            </body>
-        </html>
-    );
+  return (
+    <html lang="ar" dir="rtl">
+      <body className="font-sans antialiased bg-white text-gray-900">
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
+      </body>
+    </html>
+  );
 }
